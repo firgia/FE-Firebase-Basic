@@ -1,4 +1,4 @@
-package com.example.authentication
+package com.flutterwithgia.authentication
 
 import io.flutter.embedding.android.FlutterActivity
 
