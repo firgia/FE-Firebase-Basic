@@ -4,7 +4,15 @@ import 'package:flutter/material.dart';
 class AppTheme {
   /// default application theme
   static ThemeData get basic => ThemeData(
-        primarySwatch: Colors.blue,
+        canvasColor: Colors.white,
+        primarySwatch: Colors.deepPurple,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+        ),
       );
 
   // you can add other custom theme in this class like  light theme, dark theme ,etc.
