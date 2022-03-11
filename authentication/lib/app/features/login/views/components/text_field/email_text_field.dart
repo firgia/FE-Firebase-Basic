@@ -9,6 +9,7 @@ class _EmailTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      textInputAction: TextInputAction.next,
       decoration: const InputDecoration(
         icon: Icon(Icons.alternate_email),
         hintText: "Email",

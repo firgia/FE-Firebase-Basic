@@ -3,6 +3,8 @@ library login;
 import 'package:authentication/app/constans/app_constants.dart';
 import 'package:authentication/app/shared_components/async_button.dart';
 import 'package:authentication/app/shared_components/header_text.dart';
+import 'package:authentication/app/utils/mixins/app_mixins.dart';
+import 'package:authentication/app/utils/ui/ui_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -28,32 +30,35 @@ class LoginScreen extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultSpacing * 2),
-          child: Form(
-            key: controller.form,
-            child: Column(
-              children: [
-                const SizedBox(height: kDefaultSpacing),
-                _buildIllustration(),
-                const SizedBox(height: kDefaultSpacing),
-                _buildTitle(),
-                const SizedBox(height: kDefaultSpacing * 1.5),
-                _EmailTextField(controller: controller.email),
-                const SizedBox(height: kDefaultSpacing),
-                _PasswordTextField(controller: controller.password),
-                _buildForgotPasswordButton(),
-                const Spacer(),
-                _buildLoginButton(),
-                const Spacer(flex: 2),
-                const _ContinueText(),
-                const SizedBox(height: kDefaultSpacing),
-                _buildOtherAuthProvider(),
-                const Spacer(flex: 2),
-                _SignUpButton(onPressed: () {}),
-                const SizedBox(height: kDefaultSpacing),
-              ],
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: Get.height,
+          child: SafeArea(
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: kDefaultSpacing * 2),
+              child: Column(
+                children: [
+                  const SizedBox(height: kDefaultSpacing),
+                  _buildIllustration(),
+                  const SizedBox(height: kDefaultSpacing),
+                  _buildTitle(),
+                  const SizedBox(height: kDefaultSpacing * 1.5),
+                  _EmailTextField(controller: controller.email),
+                  const SizedBox(height: kDefaultSpacing),
+                  _PasswordTextField(controller: controller.password),
+                  _buildForgotPasswordButton(),
+                  const Spacer(),
+                  _buildLoginButton(),
+                  const Spacer(flex: 2),
+                  const _ContinueText(),
+                  const SizedBox(height: kDefaultSpacing),
+                  _buildOtherAuthProvider(),
+                  const Spacer(flex: 2),
+                  _SignUpButton(onPressed: () {}),
+                  const SizedBox(height: kDefaultSpacing),
+                ],
+              ),
             ),
           ),
         ),
