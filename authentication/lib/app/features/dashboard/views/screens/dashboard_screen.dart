@@ -1,5 +1,9 @@
 library dashboard;
 
+import 'package:authentication/app/config/routes/app_pages.dart';
+import 'package:authentication/app/shared_components/async_button.dart';
+import 'package:authentication/app/utils/services/service.dart';
+
 import '../../../../shared_components/header_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,9 +17,9 @@ part '../../controllers/dashboard_controller.dart';
 // model
 
 // component
-part '../components/login_button.dart';
+part '../components/sign_out_button.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends GetView<DashboardController> {
   const DashboardScreen({Key? key}) : super(key: key);
 
   @override
@@ -23,12 +27,22 @@ class DashboardScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             const HeaderText("dashboard"),
             const SizedBox(height: 10),
-            _LoginButton(onPressed: () {}),
+            _buildSignOutButton(),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildSignOutButton() {
+    return Obx(
+      () => _SignOutButton(
+        isLoading: controller.isLoading.value,
+        onPressed: () => controller.signOut(),
       ),
     );
   }

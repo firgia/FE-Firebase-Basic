@@ -5,28 +5,30 @@ import 'package:authentication/app/constans/app_constants.dart';
 import 'package:authentication/app/shared_components/async_button.dart';
 import 'package:authentication/app/shared_components/header_text.dart';
 import 'package:authentication/app/utils/mixins/app_mixins.dart';
+import 'package:authentication/app/utils/services/service.dart';
 import 'package:authentication/app/utils/ui/ui_utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // binding
-part '../../bindings/login_binding.dart';
+part '../../bindings/sign_in_binding.dart';
 
 // controller
-part '../../controllers/login_controller.dart';
+part '../../controllers/sign_in_controller.dart';
 
 // component
 part '../components/button/forgot_password_button.dart';
 part '../components/button/google_button.dart';
-part '../components/button/login_button.dart';
+part '../components/button/sign_in_button.dart';
 part '../components/button/phone_button.dart';
 part '../components/button/sign_up_button.dart';
 part '../components/text/continue_text.dart';
 part '../components/text_field/email_text_field.dart';
 part '../components/text_field/password_text_field.dart';
 
-class LoginScreen extends GetView<LoginController> {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignInScreen extends GetView<SignInController> {
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +79,7 @@ class LoginScreen extends GetView<LoginController> {
   Widget _buildTitle() {
     return const Align(
       alignment: Alignment.topLeft,
-      child: HeaderText("Login"),
+      child: HeaderText("Sign In"),
     );
   }
 
@@ -91,9 +93,11 @@ class LoginScreen extends GetView<LoginController> {
   }
 
   Widget _buildLoginButton() {
-    return _LoginButton(
-      isLoading: false,
-      onPressed: () => controller.login(),
+    return Obx(
+      () => _SignInButton(
+        isLoading: controller.isLoading.value,
+        onPressed: () => controller.login(),
+      ),
     );
   }
 
