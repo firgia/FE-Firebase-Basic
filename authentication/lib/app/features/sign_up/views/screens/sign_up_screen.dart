@@ -76,7 +76,7 @@ class SignUpScreen extends GetView<SignUpController> {
 
   Widget _buildIllustration() {
     return Image.asset(
-      ImageRasterPath.relax,
+      ImageRasterPath.form,
       height: 200,
     );
   }
