@@ -1,7 +1,7 @@
 part of login;
 
-class _LoginButton extends StatelessWidget {
-  const _LoginButton(
+class _SignInButton extends StatelessWidget {
+  const _SignInButton(
       {required this.isLoading, required this.onPressed, Key? key})
       : super(key: key);
 
@@ -20,7 +20,7 @@ class _LoginButton extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      child: const Text("Login"),
+      child: const Text("Sign In"),
       isLoading: isLoading,
     );
   }

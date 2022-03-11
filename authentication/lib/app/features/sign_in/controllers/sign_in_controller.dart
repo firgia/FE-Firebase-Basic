@@ -1,6 +1,6 @@
 part of login;
 
-class LoginController extends GetxController with ValidatorMixin {
+class SignInController extends GetxController with ValidatorMixin {
   final email = TextEditingController();
   final password = TextEditingController();
 

@@ -10,23 +10,23 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // binding
-part '../../bindings/login_binding.dart';
+part '../../bindings/sign_in_binding.dart';
 
 // controller
-part '../../controllers/login_controller.dart';
+part '../../controllers/sign_in_controller.dart';
 
 // component
 part '../components/button/forgot_password_button.dart';
 part '../components/button/google_button.dart';
-part '../components/button/login_button.dart';
+part '../components/button/sign_in_button.dart';
 part '../components/button/phone_button.dart';
 part '../components/button/sign_up_button.dart';
 part '../components/text/continue_text.dart';
 part '../components/text_field/email_text_field.dart';
 part '../components/text_field/password_text_field.dart';
 
-class LoginScreen extends GetView<LoginController> {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignInScreen extends GetView<SignInController> {
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class LoginScreen extends GetView<LoginController> {
   Widget _buildTitle() {
     return const Align(
       alignment: Alignment.topLeft,
-      child: HeaderText("Login"),
+      child: HeaderText("Sign In"),
     );
   }
 
@@ -91,7 +91,7 @@ class LoginScreen extends GetView<LoginController> {
   }
 
   Widget _buildLoginButton() {
-    return _LoginButton(
+    return _SignInButton(
       isLoading: false,
       onPressed: () => controller.login(),
     );

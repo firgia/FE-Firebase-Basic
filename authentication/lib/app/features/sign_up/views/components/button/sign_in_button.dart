@@ -1,7 +1,7 @@
 part of sign_up;
 
-class _LoginButton extends StatelessWidget {
-  const _LoginButton({required this.onPressed, Key? key}) : super(key: key);
+class _SignInButton extends StatelessWidget {
+  const _SignInButton({required this.onPressed, Key? key}) : super(key: key);
 
   final Function()? onPressed;
 
@@ -14,7 +14,7 @@ class _LoginButton extends StatelessWidget {
           "Already have a account?",
           style: Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
         ),
-        TextButton(onPressed: onPressed, child: const Text("Login")),
+        TextButton(onPressed: onPressed, child: const Text("Sign In")),
       ],
     );
   }

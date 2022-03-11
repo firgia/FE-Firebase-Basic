@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "615147200556",
+    "project_id": "test-authentication-737d4",
+    "storage_bucket": "test-authentication-737d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615147200556:android:eba7f4945f2ded4bb53189",
+        "android_client_info": {
+          "package_name": "com.flutterwithgia.authentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615147200556-pnio8l2sff2u2gjokbc4etg84if8pr2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB31mXomQgI0is9f-qTmalTSmBLK1q_yIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615147200556-pnio8l2sff2u2gjokbc4etg84if8pr2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

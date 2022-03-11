@@ -17,7 +17,7 @@ part '../../controllers/sign_up_controller.dart';
 
 // component
 part '../components/button/continue_button.dart';
-part '../components/button/login_button.dart';
+part '../components/button/sign_in_button.dart';
 part '../components/button/term_condition_button.dart';
 part '../components/text_field/email_text_field.dart';
 part '../components/text_field/password_text_field.dart';
@@ -55,7 +55,7 @@ class SignUpScreen extends GetView<SignUpController> {
                       const Spacer(flex: 1),
                       _buildContinueButton(),
                       const SizedBox(height: kDefaultSpacing),
-                      _LoginButton(onPressed: () => controller.goToLogin()),
+                      _SignInButton(onPressed: () => controller.goToLogin()),
                       const SizedBox(height: kDefaultSpacing),
                     ],
                   ),
