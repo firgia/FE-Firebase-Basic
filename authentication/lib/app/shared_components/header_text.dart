@@ -9,7 +9,10 @@ class HeaderText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: Theme.of(context).textTheme.headline6,
+      style: const TextStyle(
+        fontSize: 28,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }
