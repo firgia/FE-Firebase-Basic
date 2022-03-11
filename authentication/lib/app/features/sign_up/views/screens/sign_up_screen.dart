@@ -4,7 +4,9 @@ import 'package:authentication/app/constans/app_constants.dart';
 import 'package:authentication/app/shared_components/async_button.dart';
 import 'package:authentication/app/shared_components/header_text.dart';
 import 'package:authentication/app/utils/mixins/app_mixins.dart';
+import 'package:authentication/app/utils/services/service.dart';
 import 'package:authentication/app/utils/ui/ui_utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -55,7 +57,7 @@ class SignUpScreen extends GetView<SignUpController> {
                       const Spacer(flex: 1),
                       _buildContinueButton(),
                       const SizedBox(height: kDefaultSpacing),
-                      _SignInButton(onPressed: () => controller.goToLogin()),
+                      _SignInButton(onPressed: () => controller.goToSignIn()),
                       const SizedBox(height: kDefaultSpacing),
                     ],
                   ),
@@ -89,9 +91,11 @@ class SignUpScreen extends GetView<SignUpController> {
   }
 
   Widget _buildContinueButton() {
-    return _ContinueButton(
-      isLoading: false,
-      onPressed: () => controller.signUp(),
+    return Obx(
+      () => _ContinueButton(
+        isLoading: controller.isLoading.value,
+        onPressed: () => controller.signUp(),
+      ),
     );
   }
 }
