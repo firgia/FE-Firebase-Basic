@@ -19,7 +19,7 @@ class ImageRasterPath {
 
   static const email = "$_path/email.png";
   static const lock = "$_path/lock.png";
-  static const phone = "$_path/phone.png";
+  static const form = "$_path/form.png";
   static const relax = "$_path/relax.png";
   static const google = "$_path/google.png";
 }

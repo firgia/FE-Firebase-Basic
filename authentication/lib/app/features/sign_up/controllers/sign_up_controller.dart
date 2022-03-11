@@ -1,10 +1,10 @@
-part of login;
+part of sign_up;
 
-class LoginController extends GetxController with ValidatorMixin {
+class SignUpController extends GetxController with ValidatorMixin {
   final email = TextEditingController();
   final password = TextEditingController();
 
-  void login() {
+  void signUp() {
     String? emailError = isValidEmail(email.text);
     String? passwordError = isValidPassword(password.text);
 
@@ -13,12 +13,9 @@ class LoginController extends GetxController with ValidatorMixin {
     } else if (passwordError != null) {
       AppSnackbar.showMessage(passwordError);
     } else {
-      // continue login
+      // continue sign up
     }
   }
 
-  void loginWithGoogle() {}
-  void loginWithPhoneNumber() {}
-  void goToSignUp() => Get.toNamed(Routes.signUp);
-  void goToForgotPassword() {}
+  void goToLogin() => Get.back();
 }

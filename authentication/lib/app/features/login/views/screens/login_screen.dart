@@ -1,5 +1,6 @@
 library login;
 
+import 'package:authentication/app/config/routes/app_pages.dart';
 import 'package:authentication/app/constans/app_constants.dart';
 import 'package:authentication/app/shared_components/async_button.dart';
 import 'package:authentication/app/shared_components/header_text.dart';
@@ -55,7 +56,7 @@ class LoginScreen extends GetView<LoginController> {
                   const SizedBox(height: kDefaultSpacing),
                   _buildOtherAuthProvider(),
                   const Spacer(flex: 2),
-                  _SignUpButton(onPressed: () {}),
+                  _SignUpButton(onPressed: () => controller.goToSignUp()),
                   const SizedBox(height: kDefaultSpacing),
                 ],
               ),
