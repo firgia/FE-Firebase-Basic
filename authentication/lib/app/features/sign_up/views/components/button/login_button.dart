@@ -1,27 +1,21 @@
 part of sign_up;
 
 class _LoginButton extends StatelessWidget {
-  const _LoginButton(
-      {required this.isLoading, required this.onPressed, Key? key})
-      : super(key: key);
+  const _LoginButton({required this.onPressed, Key? key}) : super(key: key);
 
-  final bool isLoading;
   final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return AsyncButton(
-      style: ElevatedButton.styleFrom(
-        minimumSize: const Size(double.maxFinite, 50),
-        textStyle: const TextStyle(
-          fontSize: 17,
-          fontWeight: FontWeight.w700,
-          letterSpacing: 1.1,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "Already have a account?",
+          style: Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
         ),
-      ),
-      onPressed: onPressed,
-      child: const Text("Login"),
-      isLoading: isLoading,
+        TextButton(onPressed: onPressed, child: const Text("Login")),
+      ],
     );
   }
 }

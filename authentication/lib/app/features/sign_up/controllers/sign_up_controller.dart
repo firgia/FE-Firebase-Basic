@@ -17,5 +17,5 @@ class SignUpController extends GetxController with ValidatorMixin {
     }
   }
 
-  void goToForgotPassword() {}
+  void goToLogin() => Get.back();
 }
