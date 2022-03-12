@@ -12,7 +12,7 @@ class Routes {
 // made separately to make it easier to manage route naming
 class _Paths {
   static const splash = '/';
-  static const signIn = '/login';
+  static const signIn = '/sign-in';
   static const signUp = '/sign-up';
   static const dashboard = '/dashboard';
 }

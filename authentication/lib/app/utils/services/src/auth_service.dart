@@ -1,7 +1,7 @@
 part of service;
 
 class AuthService {
-  final _auth = fa.FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance;
 
   /// Attempts to sign in a user with the given email address and password.
   ///
@@ -22,9 +22,7 @@ class AuthService {
   /// - **wrong-password**:
   ///  - Thrown if the password is invalid for the given email, or the account
   ///    corresponding to the email does not have a password set.
-  ///
-  ///
-  Future<fa.UserCredential> signInWithEmail({
+  Future<UserCredential> signInWithEmail({
     required String email,
     required String password,
   }) async {
@@ -53,7 +51,7 @@ class AuthService {
   ///    email/password accounts in the Firebase Console, under the Auth tab.
   /// - **weak-password**:
   ///  - Thrown if the password is not strong enough.
-  Future<fa.UserCredential> signUpWithEmail({
+  Future<UserCredential> signUpWithEmail({
     required String email,
     required String password,
   }) async {
@@ -69,13 +67,11 @@ class AuthService {
     }
   }
 
-  bool isLogin() => _auth.currentUser != null;
+  bool get isLogin => _auth.currentUser != null;
 
   Future<void> signOut() async {
-    if (isLogin()) {
+    if (isLogin) {
       await _auth.signOut();
     }
   }
-
-  void dispose() {}
 }

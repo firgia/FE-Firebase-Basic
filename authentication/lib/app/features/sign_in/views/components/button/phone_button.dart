@@ -1,10 +1,9 @@
-part of login;
+part of sign_in;
 
 class _PhoneButton extends StatelessWidget {
   const _PhoneButton({required this.onPressed, Key? key}) : super(key: key);
 
   final Function()? onPressed;
-
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(

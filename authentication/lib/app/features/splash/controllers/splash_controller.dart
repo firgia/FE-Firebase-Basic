@@ -9,7 +9,7 @@ class SplashController extends GetxController {
     super.onReady();
 
     isLoading.value = false;
-    if (auth.isLogin()) {
+    if (auth.isLogin) {
       Get.offNamed(Routes.dashboard);
     } else {
       Get.offNamed(Routes.signIn);

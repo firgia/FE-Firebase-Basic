@@ -51,10 +51,10 @@ class SignUpScreen extends GetView<SignUpController> {
                       _PasswordTextField(controller: controller.password),
                       const SizedBox(height: kDefaultSpacing * 2),
                       _TermConditionButton(
-                        onPressedPrivacyPolice: () {},
+                        onPressedPrivacyPolicy: () {},
                         onPressedTerms: () {},
                       ),
-                      const Spacer(flex: 1),
+                      const Spacer(),
                       _buildContinueButton(),
                       const SizedBox(height: kDefaultSpacing),
                       _SignInButton(onPressed: () => controller.goToSignIn()),
@@ -70,7 +70,7 @@ class SignUpScreen extends GetView<SignUpController> {
               padding: EdgeInsets.all(kDefaultSpacing / 2),
               child: BackButton(),
             ),
-          ),
+          )
         ],
       ),
     );

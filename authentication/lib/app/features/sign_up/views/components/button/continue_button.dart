@@ -1,11 +1,9 @@
 part of sign_up;
 
 class _ContinueButton extends StatelessWidget {
-  const _ContinueButton({
-    required this.isLoading,
-    required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+  const _ContinueButton(
+      {required this.isLoading, required this.onPressed, Key? key})
+      : super(key: key);
 
   final bool isLoading;
   final Function()? onPressed;
