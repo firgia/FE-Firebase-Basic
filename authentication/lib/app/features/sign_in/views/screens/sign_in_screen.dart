@@ -96,7 +96,7 @@ class SignInScreen extends GetView<SignInController> {
     return Obx(
       () => _SignInButton(
         isLoading: controller.isLoading.value,
-        onPressed: () => controller.signUp(),
+        onPressed: () => controller.signIn(),
       ),
     );
   }

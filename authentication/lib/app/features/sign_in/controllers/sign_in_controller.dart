@@ -7,7 +7,7 @@ class SignInController extends GetxController with ValidatorMixin {
 
   final isLoading = false.obs;
 
-  void signUp() async {
+  void signIn() async {
     String? emailError = isValidEmail(email.text);
     String? passwordError = isValidPassword(password.text);
 
