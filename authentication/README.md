@@ -2,7 +2,7 @@
 
 ## [Watch it on YouTube](https://youtube.com/playlist?list=PL90UioxEmIFFTmKS2ixiqCqLUkbtAPmHN)
 
-### Dashboard Screen
+### Sign In & Sign Up Screen
 
 Sign in & Sign up with email using firebase is very easy, in this project I'll show you a sample of using email authentication using firebase and creating an attractive UI.
 
