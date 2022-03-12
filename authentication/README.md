@@ -7,6 +7,8 @@
 Sign in & Sign up with email using firebase is very easy, in this project I'll show you a sample of using email authentication using firebase and creating an attractive UI.
 
 ![thumbnail](https://user-images.githubusercontent.com/89120990/158010101-4d8bef75-fb51-4fd5-867c-d911bab0daf7.png)
+![2022-03-12 13-00-54(1)](https://user-images.githubusercontent.com/89120990/158010917-320f005a-1f09-4434-a04e-7a115dc812a1.gif)
+
 
 **Note:**
 Before running this flutter project, you have to add or replace Google-Service.json file in android/app with your Firebase project and don't forget to enable your Email Authentication.
