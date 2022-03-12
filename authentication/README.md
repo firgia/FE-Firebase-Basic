@@ -11,7 +11,7 @@ Sign in & Sign up with email using firebase is very easy, in this project I'll s
 
 
 **Note:**
-Before running this flutter project, you have to add or replace Google-Service.json file in android/app with your Firebase project and don't forget to enable your Email Authentication.
+Before running this flutter project, you have to add or replace google-services.json file in android/app with your Firebase project and don't forget to enable your Email Authentication.
 
 **Dependencies:**
 
