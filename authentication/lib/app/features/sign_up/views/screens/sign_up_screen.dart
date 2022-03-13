@@ -1,5 +1,6 @@
 library sign_up;
 
+import 'package:authentication/app/config/routes/app_pages.dart';
 import 'package:authentication/app/constans/app_constants.dart';
 import 'package:authentication/app/shared_components/async_button.dart';
 import 'package:authentication/app/shared_components/header_text.dart';
@@ -51,10 +52,10 @@ class SignUpScreen extends GetView<SignUpController> {
                       _PasswordTextField(controller: controller.password),
                       const SizedBox(height: kDefaultSpacing * 2),
                       _TermConditionButton(
-                        onPressedPrivacyPolice: () {},
+                        onPressedPrivacyPolicy: () {},
                         onPressedTerms: () {},
                       ),
-                      const Spacer(flex: 1),
+                      const Spacer(),
                       _buildContinueButton(),
                       const SizedBox(height: kDefaultSpacing),
                       _SignInButton(onPressed: () => controller.goToSignIn()),
@@ -70,7 +71,7 @@ class SignUpScreen extends GetView<SignUpController> {
               padding: EdgeInsets.all(kDefaultSpacing / 2),
               child: BackButton(),
             ),
-          ),
+          )
         ],
       ),
     );

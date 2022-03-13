@@ -1,7 +1,7 @@
 part of service;
 
 class AuthService {
-  final _auth = fa.FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance;
 
   /// Attempts to sign in a user with the given email address and password.
   ///
@@ -22,9 +22,7 @@ class AuthService {
   /// - **wrong-password**:
   ///  - Thrown if the password is invalid for the given email, or the account
   ///    corresponding to the email does not have a password set.
-  ///
-  ///
-  Future<fa.UserCredential> signInWithEmail({
+  Future<UserCredential> signInWithEmail({
     required String email,
     required String password,
   }) async {
@@ -53,7 +51,7 @@ class AuthService {
   ///    email/password accounts in the Firebase Console, under the Auth tab.
   /// - **weak-password**:
   ///  - Thrown if the password is not strong enough.
-  Future<fa.UserCredential> signUpWithEmail({
+  Future<UserCredential> signUpWithEmail({
     required String email,
     required String password,
   }) async {
@@ -69,13 +67,38 @@ class AuthService {
     }
   }
 
-  bool isLogin() => _auth.currentUser != null;
-
-  Future<void> signOut() async {
-    if (isLogin()) {
-      await _auth.signOut();
+  /// Sends a verification email to a user, if signed in.
+  ///
+  /// The verification process is completed by calling [applyActionCode].
+  Future<void> sendEmailVerification() async {
+    try {
+      if (currentUser != null) {
+        if (!currentUser!.emailVerified) {
+          await currentUser!.sendEmailVerification();
+        }
+      }
+    } catch (err) {
+      rethrow;
     }
   }
 
-  void dispose() {}
+  bool get isLogin => _auth.currentUser != null;
+
+  bool? get isEmailVerified => _auth.currentUser?.emailVerified;
+  User? get currentUser => _auth.currentUser;
+
+  /// Refreshes the current user, if signed in.
+  Future<void> reload() async {
+    if (_auth.currentUser != null) {
+      await _auth.currentUser!.reload();
+    }
+  }
+
+  Future<void> signOut() async {
+    if (isLogin) {
+      try {
+        await _auth.signOut();
+      } catch (_) {}
+    }
+  }
 }

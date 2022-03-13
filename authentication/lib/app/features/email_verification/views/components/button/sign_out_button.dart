@@ -1,7 +1,7 @@
-part of sign_up;
+part of email_verification;
 
-class _ContinueButton extends StatelessWidget {
-  const _ContinueButton(
+class _SignOutButton extends StatelessWidget {
+  const _SignOutButton(
       {required this.isLoading, required this.onPressed, Key? key})
       : super(key: key);
 
@@ -20,7 +20,7 @@ class _ContinueButton extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      child: const Text("Continue"),
+      child: const Text("Sign Out"),
       isLoading: isLoading,
     );
   }

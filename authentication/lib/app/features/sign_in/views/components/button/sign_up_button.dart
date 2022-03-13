@@ -1,10 +1,9 @@
-part of login;
+part of sign_in;
 
 class _SignUpButton extends StatelessWidget {
   const _SignUpButton({required this.onPressed, Key? key}) : super(key: key);
 
   final Function()? onPressed;
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -14,7 +13,10 @@ class _SignUpButton extends StatelessWidget {
           "Don't have an account?",
           style: Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
         ),
-        TextButton(onPressed: onPressed, child: const Text("Sign Up")),
+        TextButton(
+          onPressed: onPressed,
+          child: const Text("Sign Up"),
+        )
       ],
     );
   }

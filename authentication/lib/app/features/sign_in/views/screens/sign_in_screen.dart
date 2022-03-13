@@ -1,4 +1,4 @@
-library login;
+library sign_in;
 
 import 'package:authentication/app/config/routes/app_pages.dart';
 import 'package:authentication/app/constans/app_constants.dart';
@@ -20,8 +20,8 @@ part '../../controllers/sign_in_controller.dart';
 // component
 part '../components/button/forgot_password_button.dart';
 part '../components/button/google_button.dart';
-part '../components/button/sign_in_button.dart';
 part '../components/button/phone_button.dart';
+part '../components/button/sign_in_button.dart';
 part '../components/button/sign_up_button.dart';
 part '../components/text/continue_text.dart';
 part '../components/text_field/email_text_field.dart';
@@ -52,7 +52,7 @@ class SignInScreen extends GetView<SignInController> {
                   _PasswordTextField(controller: controller.password),
                   _buildForgotPasswordButton(),
                   const Spacer(),
-                  _buildLoginButton(),
+                  _buildSignInButton(),
                   const Spacer(flex: 2),
                   const _ContinueText(),
                   const SizedBox(height: kDefaultSpacing),
@@ -92,11 +92,11 @@ class SignInScreen extends GetView<SignInController> {
     );
   }
 
-  Widget _buildLoginButton() {
+  Widget _buildSignInButton() {
     return Obx(
       () => _SignInButton(
         isLoading: controller.isLoading.value,
-        onPressed: () => controller.login(),
+        onPressed: () => controller.signIn(),
       ),
     );
   }
@@ -106,10 +106,10 @@ class SignInScreen extends GetView<SignInController> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         _GoogleButton(
-          onPressed: () => controller.loginWithGoogle(),
+          onPressed: () => controller.signInWithGoogle(),
         ),
         _PhoneButton(
-          onPressed: () => controller.loginWithPhoneNumber(),
+          onPressed: () => controller.signInWithPhoneNumber(),
         ),
       ],
     );

@@ -1,4 +1,4 @@
-part of login;
+part of sign_in;
 
 class _SignInButton extends StatelessWidget {
   const _SignInButton(
@@ -7,7 +7,6 @@ class _SignInButton extends StatelessWidget {
 
   final bool isLoading;
   final Function()? onPressed;
-
   @override
   Widget build(BuildContext context) {
     return AsyncButton(

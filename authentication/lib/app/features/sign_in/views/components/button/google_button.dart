@@ -1,10 +1,9 @@
-part of login;
+part of sign_in;
 
 class _GoogleButton extends StatelessWidget {
   const _GoogleButton({required this.onPressed, Key? key}) : super(key: key);
 
   final Function()? onPressed;
-
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(

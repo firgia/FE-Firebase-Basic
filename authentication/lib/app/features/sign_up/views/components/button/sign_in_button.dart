@@ -14,7 +14,10 @@ class _SignInButton extends StatelessWidget {
           "Already have a account?",
           style: Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
         ),
-        TextButton(onPressed: onPressed, child: const Text("Sign In")),
+        TextButton(
+          onPressed: onPressed,
+          child: const Text("Sign In"),
+        )
       ],
     );
   }

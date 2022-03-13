@@ -8,9 +8,20 @@ class SplashController extends GetxController {
   void onReady() {
     super.onReady();
 
+    validateUser();
+  }
+
+  void validateUser() async {
     isLoading.value = false;
-    if (auth.isLogin()) {
-      Get.offNamed(Routes.dashboard);
+
+    if (auth.isLogin) {
+      await auth.reload();
+
+      if (auth.isEmailVerified == true) {
+        Get.offNamed(Routes.dashboard);
+      } else {
+        Get.offNamed(Routes.emailVerification);
+      }
     } else {
       Get.offNamed(Routes.signIn);
     }

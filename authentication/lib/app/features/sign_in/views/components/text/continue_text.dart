@@ -1,4 +1,4 @@
-part of login;
+part of sign_in;
 
 class _ContinueText extends StatelessWidget {
   const _ContinueText({Key? key}) : super(key: key);
@@ -8,10 +8,11 @@ class _ContinueText extends StatelessWidget {
     return Row(
       children: const [
         Expanded(
-            child: Divider(
-          endIndent: kDefaultSpacing,
-          thickness: 1,
-        )),
+          child: Divider(
+            endIndent: kDefaultSpacing,
+            thickness: 1,
+          ),
+        ),
         Text(
           "Or continue with",
           style: TextStyle(

@@ -14,8 +14,6 @@ part '../../bindings/dashboard_binding.dart';
 // controller
 part '../../controllers/dashboard_controller.dart';
 
-// model
-
 // component
 part '../components/sign_out_button.dart';
 
