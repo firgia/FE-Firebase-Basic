@@ -65,4 +65,11 @@ class EmailVerificationController extends GetxController {
     isLoadingSignOut.value = false;
     Get.offAllNamed(Routes.splash);
   }
+
+  @override
+  void onClose() {
+    super.onClose();
+
+    timer?.cancel();
+  }
 }
