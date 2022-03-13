@@ -4,10 +4,16 @@
 
 ### Sign In & Sign Up Screen
 
-Sign in & Sign up with email using firebase is very easy, in this project I'll show you a sample of using email authentication using firebase and creating an attractive UI.
+Sign in & Sign up with email using firebase is very easy, in this project I'll show you a sample of using email authentication using firebase with beautiful UI.
 
 ![thumbnail](https://user-images.githubusercontent.com/89120990/158012100-cb2a15b1-834c-471b-8bbe-2e23c2ba85ea.png)
 ![2022-03-12 13-00-54(1)](https://user-images.githubusercontent.com/89120990/158010917-320f005a-1f09-4434-a04e-7a115dc812a1.gif)
+
+### Email Verification Screen
+
+Sometimes users can sign up with unknown email, we have to send link verification to verify isn't an unknown email.
+
+![demo](https://user-images.githubusercontent.com/89120990/158054312-a7821399-9807-486a-846a-a66796dd81a2.gif)
 
 
 **Note:**

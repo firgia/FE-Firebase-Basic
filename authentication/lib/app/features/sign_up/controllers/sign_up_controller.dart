@@ -25,7 +25,8 @@ class SignUpController extends GetxController with ValidatorMixin {
         );
 
         AppSnackbar.showMessage("Successfully created account");
-        goToSignIn();
+        await auth.sendEmailVerification();
+        goToEmailVerification();
       } on FirebaseAuthException catch (e) {
         switch (e.code) {
           case 'email-already-in-use':
@@ -52,5 +53,6 @@ class SignUpController extends GetxController with ValidatorMixin {
     }
   }
 
+  void goToEmailVerification() => Get.offAllNamed(Routes.emailVerification);
   void goToSignIn() => Get.back();
 }

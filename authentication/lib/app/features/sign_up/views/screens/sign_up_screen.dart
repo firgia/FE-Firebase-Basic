@@ -1,5 +1,6 @@
 library sign_up;
 
+import 'package:authentication/app/config/routes/app_pages.dart';
 import 'package:authentication/app/constans/app_constants.dart';
 import 'package:authentication/app/shared_components/async_button.dart';
 import 'package:authentication/app/shared_components/header_text.dart';

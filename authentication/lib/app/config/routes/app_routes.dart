@@ -5,6 +5,7 @@ class Routes {
   static const splash = _Paths.splash;
   static const signIn = _Paths.signIn;
   static const signUp = _Paths.signUp;
+  static const emailVerification = _Paths.emailVerification;
   static const dashboard = _Paths.dashboard;
 }
 
@@ -14,5 +15,6 @@ class _Paths {
   static const splash = '/';
   static const signIn = '/sign-in';
   static const signUp = '/sign-up';
+  static const emailVerification = '/email-verification';
   static const dashboard = '/dashboard';
 }
