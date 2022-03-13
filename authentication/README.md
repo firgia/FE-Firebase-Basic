@@ -11,7 +11,7 @@ Sign in & Sign up with email using firebase is very easy, in this project I'll s
 
 ### Email Verification Screen
 
-sometimes users register with someone else's email, to ensure that email we have to verify.
+Sometimes users can sign up with unknown email, we have to send link verification to verify isn't an unknown email.
 
 ![demo](https://user-images.githubusercontent.com/89120990/158054312-a7821399-9807-486a-846a-a66796dd81a2.gif)
 
