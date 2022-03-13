@@ -96,7 +96,9 @@ class AuthService {
 
   Future<void> signOut() async {
     if (isLogin) {
-      await _auth.signOut();
+      try {
+        await _auth.signOut();
+      } catch (_) {}
     }
   }
 }
