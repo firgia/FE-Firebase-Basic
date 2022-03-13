@@ -23,8 +23,12 @@ class SignInController extends GetxController with ValidatorMixin {
           email: email.text,
           password: password.text,
         );
-        goToDashboard();
         isLoading.value = false;
+        if (auth.isEmailVerified == true) {
+          goToDashboard();
+        } else {
+          goToEmailVerification();
+        }
       } on FirebaseAuthException catch (e) {
         isLoading.value = false;
         switch (e.code) {
@@ -52,6 +56,7 @@ class SignInController extends GetxController with ValidatorMixin {
 
   void signInWithGoogle() {}
   void signInWithPhoneNumber() {}
+  void goToEmailVerification() => Get.offNamed(Routes.emailVerification);
   void goToDashboard() => Get.offNamed(Routes.dashboard);
   void goToForgotPassword() {}
   void goToSignUp() => Get.toNamed(Routes.signUp);
