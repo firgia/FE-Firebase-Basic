@@ -1,8 +1,14 @@
 library email_verification;
 
+import 'dart:async';
+
+import 'package:authentication/app/config/routes/app_pages.dart';
 import 'package:authentication/app/constans/app_constants.dart';
 import 'package:authentication/app/shared_components/async_button.dart';
 import 'package:authentication/app/shared_components/header_text.dart';
+import 'package:authentication/app/utils/services/service.dart';
+import 'package:authentication/app/utils/ui/ui_utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -33,7 +39,7 @@ class EmailVerificationScreen extends GetView<EmailVerificationController> {
               const SizedBox(height: kDefaultSpacing * 4),
               const HeaderText("Email Verification"),
               const SizedBox(height: kDefaultSpacing),
-              const _InfoText(email: "test@gmail.com"),
+              _InfoText(email: controller.email),
               const Spacer(),
               _buildSignOutButton(),
               const SizedBox(height: kDefaultSpacing),
@@ -54,16 +60,20 @@ class EmailVerificationScreen extends GetView<EmailVerificationController> {
   }
 
   Widget _buildSignOutButton() {
-    return _SignOutButton(
-      isLoading: false,
-      onPressed: () {},
+    return Obx(
+      () => _SignOutButton(
+        isLoading: controller.isLoadingSignOut.value,
+        onPressed: () => controller.signOut(),
+      ),
     );
   }
 
   Widget _buildResendButton() {
-    return _ResendButton(
-      onPressed: () {},
-      isLoading: false,
+    return Obx(
+      () => _ResendButton(
+        onPressed: () => controller.resend(),
+        isLoading: controller.isLoadingResend.value,
+      ),
     );
   }
 }
