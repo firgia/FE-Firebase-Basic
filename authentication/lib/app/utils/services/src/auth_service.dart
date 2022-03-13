@@ -67,7 +67,32 @@ class AuthService {
     }
   }
 
+  /// Sends a verification email to a user, if signed in.
+  ///
+  /// The verification process is completed by calling [applyActionCode].
+  Future<void> sendEmailVerification() async {
+    try {
+      if (currentUser != null) {
+        if (!currentUser!.emailVerified) {
+          await currentUser!.sendEmailVerification();
+        }
+      }
+    } catch (err) {
+      rethrow;
+    }
+  }
+
   bool get isLogin => _auth.currentUser != null;
+
+  bool? get isEmailVerified => _auth.currentUser?.emailVerified;
+  User? get currentUser => _auth.currentUser;
+
+  /// Refreshes the current user, if signed in.
+  Future<void> reload() async {
+    if (_auth.currentUser != null) {
+      await _auth.currentUser!.reload();
+    }
+  }
 
   Future<void> signOut() async {
     if (isLogin) {
