@@ -58,6 +58,6 @@ class SignInController extends GetxController with ValidatorMixin {
   void signInWithPhoneNumber() {}
   void goToEmailVerification() => Get.offNamed(Routes.emailVerification);
   void goToDashboard() => Get.offNamed(Routes.dashboard);
-  void goToForgotPassword() {}
+  void goToForgotPassword() => Get.toNamed(Routes.forgotPassword);
   void goToSignUp() => Get.toNamed(Routes.signUp);
 }
