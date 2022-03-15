@@ -3,6 +3,10 @@ library forgot_password;
 import 'package:authentication/app/constans/app_constants.dart';
 import 'package:authentication/app/shared_components/async_button.dart';
 import 'package:authentication/app/shared_components/header_text.dart';
+import 'package:authentication/app/utils/mixins/app_mixins.dart';
+import 'package:authentication/app/utils/services/service.dart';
+import 'package:authentication/app/utils/ui/ui_utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
