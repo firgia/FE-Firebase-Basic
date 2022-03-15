@@ -82,6 +82,35 @@ class AuthService {
     }
   }
 
+  /// Sends a password reset email to the given email address.
+  ///
+  /// To complete the password reset, call [confirmPasswordReset] with the code supplied
+  /// in the email sent to the user, along with the new password specified by the user.
+  ///
+  /// May throw a [FirebaseAuthException] with the following error codes:
+  ///
+  /// - **auth/invalid-email**\
+  ///   Thrown if the email address is not valid.
+  /// - **auth/missing-android-pkg-name**\
+  ///   An Android package name must be provided if the Android app is required to be installed.
+  /// - **auth/missing-continue-uri**\
+  ///   A continue URL must be provided in the request.
+  /// - **auth/missing-ios-bundle-id**\
+  ///   An iOS Bundle ID must be provided if an App Store ID is provided.
+  /// - **auth/invalid-continue-uri**\
+  ///   The continue URL provided in the request is invalid.
+  /// - **auth/unauthorized-continue-uri**\
+  ///   The domain of the continue URL is not whitelisted. Whitelist the domain in the Firebase console.
+  /// - **auth/user-not-found**\
+  ///   Thrown if there is no user corresponding to the email address.
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } catch (err) {
+      rethrow;
+    }
+  }
+
   bool get isLogin => _auth.currentUser != null;
 
   bool? get isEmailVerified => _auth.currentUser?.emailVerified;
@@ -89,8 +118,8 @@ class AuthService {
 
   /// Refreshes the current user, if signed in.
   Future<void> reload() async {
-    if (_auth.currentUser != null) {
-      await _auth.currentUser!.reload();
+    if (currentUser != null) {
+      await currentUser!.reload();
     }
   }
 
