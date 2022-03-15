@@ -12,4 +12,17 @@ class AppSnackbar {
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
+
+  static void showNotification({
+    required String title,
+    required String message,
+    Widget? icon,
+  }) {
+    Get.snackbar(
+      title,
+      message,
+      icon: icon,
+      backgroundColor: Colors.white,
+    );
+  }
 }
